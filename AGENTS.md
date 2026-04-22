@@ -1,40 +1,25 @@
 # AGENTS.md
 
 ## Project Type
-React SPA + Vite (no build system required beyond `npm run dev`)
+React SPA + Vite
 
-## Running the Site
+## Commands
 ```bash
-npm run dev
+npm run dev      # Start dev server
+npm run build   # Production build
+npm run preview # Preview production build
+npm run lint    # ESLint check
 ```
 
 ## Key Files
-- `src/App.jsx` - Main entry point, composes all sections
-- `src/components/` - Individual components (Navbar, Hero, Work, About, Contact, Footer, Cursor)
-- `public/setup-image.png` - Hero background image
+- `src/App.jsx` - Main entry point
+- `src/components/` - Components (Navbar, Hero, Work, About, Contact, Footer, Cursor)
+- `public/setup-image.png` - Hero background
 
-## Commands
-- `npm run dev` - Start dev server
-- `npm run build` - Production build
-- `npm run preview` - Preview production build
-
-## Structure
-```
-src/
-├── components/
-│   ├── Navbar.jsx + .css
-│   ├── Hero.jsx + .css
-│   ├── Work.jsx + .css (portfolio with filter)
-│   ├── About.jsx + .css (stats counters)
-│   ├── Contact.jsx + .css
-│   ├── Footer.jsx + .css
-│   └── Cursor.jsx + .css
-├── App.jsx + App.css (global vars)
-├── main.jsx
-└── index.css
-```
+## Verification
+Run `npm run lint` before committing.
 
 ## Notes
-- Contact form requires backend integration
-- Custom cursor hidden on mobile (768px)
-- Google Fonts loaded via CDN in index.html
+- Contact form uses Web3Forms API (`src/components/Contact.jsx:4`)
+- Custom cursor hidden on mobile (<768px)
+- Google Fonts (Outfit, Ubuntu, Dancing Script) loaded via CDN in `index.html`
