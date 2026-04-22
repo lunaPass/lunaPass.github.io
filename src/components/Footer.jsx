@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer>
       <div className="footer-container">
-        <div className="footer-logo">V/EDITOR</div>
+        <div className="footer-logo">HL</div>
         <p>&copy; {year} Todos os direitos reservados.</p>
         <div className="social-links">
           <a href="#">YT</a>
