@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portafolio de Edición de Video Profesional. Especialista en Shorts, Reels y YouTube.">
+    <title>HELOÍSA LUNA | Editora de Video</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Outfit:wght@300;400;700;900&family=Ubuntu:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <nav class="navbar glass">
+        <!-- Logo temporarily hidden or consistent with design -->
+        <div class="logo">HL</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#about">Sobre mí</a></li>
+            <li><a href="#work">Portafolio</a></li>
+            <li><a href="#resume">Resumen</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <header id="hero" class="hero-section">
+        <div class="hero-light-effect"></div>
+        <div class="hero-scan-light"></div>
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="name-small">HELOÍSA</span>
+                <span class="name-large">LUNA</span>
+            </h1>
+            <p class="hero-subtitle">Editora de video</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">Contacto</a>
+                <a href="#work" class="btn-secondary">Portafolio</a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span class="mouse">
+                <span class="wheel"></span>
+            </span>
+        </div>
+    </header>
+
+    <section id="work" class="work-section">
+        <div class="container">
+            <h2 class="section-title">Proyectos <span class="highlight">Recientes</span></h2>
+
+            <div class="category-tabs">
+                <button class="tab-btn active" data-filter="all">Todos</button>
+                <button class="tab-btn" data-filter="shorts">Shorts/Reels</button>
+                <button class="tab-btn" data-filter="youtube">YouTube Largo</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Shorts Card 1 -->
+                <div class="project-card vertical" data-category="shorts">
+                    <div class="card-image placeholder-gradient-1">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Viral Lifestyle Short</h3>
+                        <p>Edición dinámica para Instagram Reels</p>
+                    </div>
+                </div>
+
+                <!-- YouTube Card 1 -->
+                <div class="project-card horizontal" data-category="youtube">
+                    <div class="card-image placeholder-gradient-2">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Tech Review 2024</h3>
+                        <p>Ritmo acelerado y motion graphics</p>
+                    </div>
+                </div>
+
+                <!-- Shorts Card 2 -->
+                <div class="project-card vertical" data-category="shorts">
+                    <div class="card-image placeholder-gradient-3">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Gaming Highlights</h3>
+                        <p>Efectos visuales y diseño de sonido</p>
+                    </div>
+                </div>
+
+                <!-- YouTube Card 2 -->
+                <div class="project-card horizontal" data-category="youtube">
+                    <div class="card-image placeholder-gradient-4">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Vlog de Viaje</h3>
+                        <p>Color grading cinematográfico</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2 class="section-title">Sobre <span class="highlight">Mí</span></h2>
+                <p>Más que solo cortar videos, creo experiencias. Con 5 años de experiencia, entiendo el lenguaje de
+                    internet y lo que hace que un espectador se quede hasta el final.</p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="500">0</span>+
+                        <span class="stat-label">Videos Editados</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="10">0</span>M+
+                        <span class="stat-label">Visualizaciones</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span>+
+                        <span class="stat-label">Clientes Felices</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="visual-box glass">
+                    <div class="software-icon">PR</div>
+                    <div class="software-icon">AE</div>
+                    <div class="software-icon">PS</div>
+                    <div class="software-icon">AU</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-box glass">
+                <h2 class="section-title">Vamos <span class="highlight">Criar?</span></h2>
+                <p>Tem um projeto em mente? Entre em contato e vamos fazer acontecer.</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Seu Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Seu Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Fale sobre seu projeto" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary glow-effect">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">V/EDITOR</div>
+            <p>&copy; 2024 Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#">YT</a>
+                <a href="#">IG</a>
+                <a href="#">TW</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
