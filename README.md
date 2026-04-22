@@ -1,16 +1,57 @@
-# React + Vite
+# HELOÍSA LUNA | Portfólio de Editora de Vídeo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio profissional desenvolvido em React + Vite para apresentação de trabalhos de edição de vídeo.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** + **Vite 8**
+- CSS Modules (componentes individuais)
+- Google Fonts (Dancing Script, Outfit, Ubuntu)
 
-## React Compiler
+## Estrutura
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+src/
+├── components/
+│   ├── Navbar.jsx + .css
+│   ├── Hero.jsx + .css
+│   ├── Work.jsx + .css
+│   ├── About.jsx + .css
+│   ├── Contact.jsx + .css
+│   ├── Footer.jsx + .css
+│   └── Cursor.jsx + .css
+├── App.jsx + App.css
+├── main.jsx
+└── index.css
+```
 
-## Expanding the ESLint configuration
+## Comandos
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run dev      # Servidor de desenvolvimento
+npm run build    # Build para produção
+npm run preview  # Preview do build
+npm run lint     # Verificação de código
+```
+
+## Seções
+
+| Seção | Descrição |
+|------|-----------|
+| Hero | Efeito de luz dinâmico que segue o mouse |
+| Work | Portfólio com filtro por categoria (Shorts/Reels, YouTube) |
+| About | Contadores animados (500+ vídeos, 10M+ visualizações) |
+| Contact | Formulário de contato (frontend) |
+| Cursor | Cursor personalizado (oculto em mobile <768px) |
+
+## Tecnologias
+
+- **Edição:** Adobe Premiere Pro, After Effects
+- **Design:** Photoshop, Audition
+- **Frontend:** React, CSS3, JavaScript
+
+## Observações
+
+- O formulário de contato requer integração com backend
+- Cursor personalizado ocultado em dispositivos móveis
+- Imagem de fundo: `public/setup-image.png`
