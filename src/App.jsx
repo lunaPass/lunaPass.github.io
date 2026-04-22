@@ -6,6 +6,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Cursor from './components/Cursor'
+import { FloatingWhatsApp } from 'react-floating-whatsapp'
 
 function App() {
   return (
@@ -17,6 +18,13 @@ function App() {
       <About />
       <Contact />
       <Footer />
+      <FloatingWhatsApp
+        phoneNumber="819994123995"
+        accountName="HELOÍSA LUNA"
+        chatboxMessage="Olá! Vim pelo seu portfólio e gostaria de fazer um orçamento."
+        notification={true}
+        notificationDelay={30}
+      />
     </>
   )
 }
