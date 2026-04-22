@@ -21,6 +21,7 @@ function App() {
       <FloatingWhatsApp
         phoneNumber="819994123995"
         accountName="HELOÍSA LUNA"
+        avatar="/hl-avatar.png"
         chatboxMessage="Olá! Vim pelo seu portfólio e gostaria de fazer um orçamento."
         notification={true}
         notificationDelay={30}
