@@ -14,8 +14,28 @@ const SUCCESS_MESSAGES = {
 const DEFAULT_LANG = 'pt'
 
 function Contact() {
-  const [result, setResult] = useState('')
+  const [status, setStatus] = useState('idle') // idle | loading | success | error
+  const [errorMessage, setErrorMessage] = useState('')
   const [showSuccess, setShowSuccess] = useState(false)
+  const [autoHideTimer, setAutoHideTimer] = useState(null)
+
+  const handleStatusChange = (newStatus) => {
+    setStatus(newStatus)
+    if (newStatus === 'success') {
+      setShowSuccess(true)
+      const timer = setTimeout(() => {
+        setStatus('idle')
+        setShowSuccess(false)
+      }, 5000)
+      setAutoHideTimer(timer)
+    }
+  }
+
+  useEffect(() => {
+    return () => {
+      if (autoHideTimer) clearTimeout(autoHideTimer)
+    }
+  }, [autoHideTimer])
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
@@ -34,7 +54,8 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setResult('Enviando...')
+    setStatus('loading')
+    setErrorMessage('')
     const formData = new FormData(e.target)
     formData.append('access_key', WEB3FORMS_ACCESS_KEY)
     formData.append('subject', 'Novo contato - Portfólio Luna')
@@ -46,14 +67,15 @@ function Contact() {
       })
       const data = await response.json()
       if (data.success) {
-        setResult('Mensagem enviada com sucesso!')
+        handleStatusChange('success')
         e.target.reset()
-        setTimeout(() => setResult(''), 3000)
       } else {
-        setResult('Erro ao enviar')
+        handleStatusChange('error')
+        setErrorMessage(data.message || 'Erro ao enviar')
       }
     } catch {
-      setResult('Erro de conexão')
+      handleStatusChange('error')
+      setErrorMessage('Erro de conexão')
     }
   }
 
@@ -65,8 +87,13 @@ function Contact() {
         <div className="contact-box glass">
           <h2 className="section-title">Vamos <span className="highlight">Criar?</span></h2>
           <p>Tem um projeto em mente? Entre em contato e vamos fazer acontecer.</p>
-          {showSuccess ? (
+          {showSuccess || status === 'success' ? (
             <div className="success-message">
+              <div className="check-icon">
+                <svg viewBox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
               <h3>{successMsg.title}</h3>
               <p>{successMsg.text}</p>
             </div>
@@ -84,8 +111,17 @@ function Contact() {
               <div className="form-group">
                 <textarea name="message" placeholder="Fale sobre seu projeto" rows="5" required></textarea>
               </div>
-              <button type="submit" className="btn-primary glow-effect">Enviar Mensagem</button>
-              {result && <p className="form-result">{result}</p>}
+              <button type="submit" className="btn-primary glow-effect" disabled={status === 'loading'}>
+                {status === 'loading' ? (
+                  <span className="btn-loading">
+                    <span className="spinner"></span>
+                    Enviando...
+                  </span>
+                ) : (
+                  'Enviar Mensagem'
+                )}
+              </button>
+              {status === 'error' && <p className="form-result error">{errorMessage}</p>}
             </form>
           )}
         </div>
